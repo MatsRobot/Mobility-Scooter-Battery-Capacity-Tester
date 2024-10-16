@@ -19,15 +19,10 @@ The circuit was designed to be used with either one (12v) or two lead acid batte
 With Lead acid batteries we talk 12v batteries but the actual voltage values vs capacity are:
 
   12.89v = 100% // Battery full and standing for a while 
-  
   12.65 = 80% // Safe discharge level 
-  
   12.23 = 50% // below this level battery start to get damaged 
-  
   11.96 = 30% // below this value the battery will not recover fully 
-  
   11.63 = 0% // Totally Dead from capacity point of view
-  
   
 This project uses module 'RFID_Clocking_Machine_V4.4' for the data logging and forms the base of the unit. 
 
