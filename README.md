@@ -27,4 +27,5 @@ This project uses module 'RFID_Clocking_Machine_V4.4' for the data logging and f
 
 The additional following pins are assigned to the Battery Tester and a small circuit was designed to take the voltage from the batteries to be measured.
 
-![Screenshot 2024-10-15 174659](https://github.com/user-attachments/assets/feb719b0-c4c7-44c2-a61d-dc4eb0f09a49)
+![Screenshot 2024-10-15 174659](https://github.com/user-attachments/assets/4e2f7d95-faed-4111-bf52-be06c072d546)
+
