@@ -5,8 +5,7 @@ It uses two light bulbs as the load to take 5A current to take the fully charged
 
 The Tested battery were two Lucas LSLC22-12 lead acid batteries and the new battries typically reach the 50% capacity using a 5A discharge load in about 5 hours.
 
-![Screenshot 2024-10-16 065214](https://github.com/user-attachments/assets/80bce5cd-046b-4690-87d5-e65baa99bf81)
-
+![Screenshot 2024-10-16 065214](https://github.com/user-attachments/assets/0141f0c6-091d-4db5-bc24-7959f566fc13)
 
 In Mobility scooters there are two 12v batteries connected in series to create the required 24v operating voltage. hence there are three accessible points, 0V, 12V and 24V. To get the voltage of the second battery we need to measure the total voltage of the first+second battery and subtract it from the voltage of the first battery.
 
