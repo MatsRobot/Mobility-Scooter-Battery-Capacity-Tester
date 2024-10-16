@@ -3,7 +3,7 @@ This device tests the remaining capacity of Lead Acid Battery used by Mobility S
 
 It uses two light bulbs as the load to take 5A current to take the fully charged battery to 50% capacity which is the safe discharge limit at 12.23V. Arduino is used to log the voltages to an SD card and also switch off the load for measurements and once 50% is reached.
 
-The Tested battery were two Lucas LSLC22-12 lead acid batteries and the new battries typically reach the 50% capacity using a 5A discharge load in about 5 hours.
+The Tested lead acid batteries were Lucas LSLC22-12 and the new battries typically reach the 50% capacity ai 5A discharge load in about 5 hours.
 
 ![Screenshot 2024-10-16 065214](https://github.com/user-attachments/assets/0141f0c6-091d-4db5-bc24-7959f566fc13)
 
