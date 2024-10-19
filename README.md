@@ -34,6 +34,14 @@ The additional following pins are assigned to the Battery Tester and a small cir
 
 ![Screenshot 2024-10-15 174659](https://github.com/user-attachments/assets/4e2f7d95-faed-4111-bf52-be06c072d546)
 
-There is no value for the Cold Cranking Amp (CCA) for these batteries quoted in the datasheet, but the measurements of the new NP50-12 (50Ah) shows that the CCA for a new battery is 378 and the CA is 473, and estimated value for the 23(AH) battery is CCA 330.
+There is no value for the Cold Cranking Amp (CCA) for these batteries quoted in the datasheet, but the measurements of the new NP50-12 (50Ah) shows that the CCA for a new battery is 378 and the CA is 473, and estimated value for the 23(AH) battery is CA 330. I used 'TOPDON' 'ArtiBattery101' for these measurements.
+
+I coiuldn't find the typical current used by the scooter motors on any of their specs, so I've measured the current taken through the batteries and I found that it varies a lot depending on the path, type of surdface, weight etc, but what I wanted was an idea of the current and these are the results:
+
+Maximum measured current was 21A, this was oriding on grass.
+The typical ride takes 5A to 10A.
+The avarage current on a normal ride was 5A.
+
+Using 2 12V-55W light bulbs adequatly simulate the average load, so the measured capacity in hours using the test module was very close to what the scooter was doing.
 
 
