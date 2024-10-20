@@ -43,8 +43,10 @@ There is no value for the Cold Cranking Amp (CCA) for these batteries quoted in 
 
 I coiuldn't find the typical current used by the scooter motors on any of their specs, so I've measured the current taken through the batteries and I found that it varies a lot depending on the path, type of surdface, weight etc, but what I wanted was an idea of the current and these are the results:
 
-Maximum measured current was 21A, this was oriding on grass.
+Maximum measured current was 21A, this was riding on the grass.
+
 The typical ride takes 5A to 10A.
+
 The avarage current on a normal ride was 5A.
 
 
