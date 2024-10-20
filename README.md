@@ -47,6 +47,11 @@ Maximum measured current was 21A, this was oriding on grass.
 The typical ride takes 5A to 10A.
 The avarage current on a normal ride was 5A.
 
+
+![Screenshot 2024-10-20 070919](https://github.com/user-attachments/assets/e11c7e5a-98ac-47a6-a32b-ff9756762a0f)
+![Screenshot 2024-10-20 071200](https://github.com/user-attachments/assets/725ae643-56e3-4f92-81d4-a6793f0a1885)
+
+
 Using 2 12V-55W light bulbs adequatly simulate the average load, so the measured capacity in hours using the test module was very close to what the scooter was doing.
 
 
