@@ -34,7 +34,7 @@ The additional following pins are assigned to the Battery Tester and a small cir
 
 ![Screenshot 2024-10-15 174659](https://github.com/user-attachments/assets/4e2f7d95-faed-4111-bf52-be06c072d546)
 
-There is no value for the Cold Cranking Amp (CCA) for these batteries quoted in the datasheet, but the measurements of the new NP50-12 (50Ah) shows that the CCA for a new battery is 378 and the CA is 478, and estimated value for the 23(AH) battery is CA 330. I used 'TOPDON' 'ArtiBattery101' for these measurements.
+There is no value for the Cold Cranking Amp (CCA) for these batteries quoted in the datasheet, but the measurements of the new NP50-12 (50Ah) shows that the CCA for a new battery is 378 and the CA is 478. I based the initial rating as what I found as the maximum amps for the 23(AH) battery which was CA 330, however for the initial measurements of a new battery this could be any value as it only uses it for comparison to what it reads. I used 'TOPDON' 'ArtiBattery101' for these measurements.
 
 ![Screenshot 2024-10-19 071327](https://github.com/user-attachments/assets/6e741641-0d63-4834-a514-c55d0aab8508)
 ![Screenshot 2024-10-20 065821](https://github.com/user-attachments/assets/6f0a512a-d697-4990-bff2-f89d53335c64)
