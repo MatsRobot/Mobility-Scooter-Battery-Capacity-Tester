@@ -48,7 +48,7 @@ The typical ride takes 5A to 10A.
 The avarage current on a normal ride was 5A.
 
 
-![Screenshot 2024-10-20 070919](https://github.com/user-attachments/assets/e11c7e5a-98ac-47a6-a32b-ff9756762a0f)
+![Screenshot 2024-10-20 070919](https://github.com/user-attachments/assets/08e3c8ad-65a4-4ee9-978d-c02e7e053a9a)
 ![Screenshot 2024-10-20 071200](https://github.com/user-attachments/assets/725ae643-56e3-4f92-81d4-a6793f0a1885)
 
 
