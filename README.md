@@ -1,13 +1,13 @@
 # Mobility-Scooter-Battery-Capacity-Tester
 This device tests the remaining capacity of Lead Acid Battery used by Mobility Scooters
 
-It uses two 12V-55W light bulbs as the load, using 5A current to take the fully charged battery to 50% capacity which is the safe discharge limit at 12.23V. Arduino is used to log the voltages of battries to an SD card and also switch off the load automatically during the measurements as the voltages relates to the battery voltage without and load and then switch them off once 50% is reached.
+It uses two 12V-55W light bulbs as the load, using 5A current to take the fully charged battery to 50% capacity which is the safe discharge limit at 12.23V. Arduino is used to log the voltages of batteries to an SD card and also switch off the load automatically during the measurements as the voltages relates to the battery voltage without and load and then switch them off once 50% is reached.
 
 The Tested lead acid batteries were Lucas LSLC22-12 and the new battery typically reaches the 50% capacity using a 5A discharge load in about 5 hours and gets to 0% capacity just over 6 hours.
 
 ![Screenshot 2024-10-16 065214](https://github.com/user-attachments/assets/0141f0c6-091d-4db5-bc24-7959f566fc13)
 
-There are two 12v batteries in Mobility scooters that are connected in series to create the required 24v operating voltage. This provides three accessible  points, 0V, 12V and 24V. To use a common earth circuit the second battery is not independant of the first so to get the voltage of the second battery we need to measure the total voltage of the first+second batteries and subtract it from the voltage of the first battery.
+There are two 12v batteries in Mobility scooters that are connected in series to create the required 24v operating voltage. This provides three accessible  points, 0V, 12V and 24V. To use a common earth circuit the second battery is not independent of the first so to get the voltage of the second battery we need to measure the total voltage of the first+second batteries and subtract it from the voltage of the first battery.
 
 The Lead acid battery will get damages if discharged over 30%, so the there is a significant focus of ensuring that the voltage . 
 When a lead battery sits below 50% state of charge, the rate of growth & accumulation of lead sulfate crystals increases substantially and blocks access to the plates for the electrolyte which diminishes battery capacity. 
@@ -41,19 +41,19 @@ There is no value for the Cold Cranking Amp (CCA) for these batteries quoted in 
 
 
 
-I coiuldn't find the typical current used by the scooter motors on any of their specs, so I've measured the current taken through the batteries and I found that it varies a lot depending on the path, type of surdface, weight etc, but what I wanted was an idea of the current and these are the results:
+I couldn't find the typical current used by the scooter motors on any of their specs, so I've measured the current taken through the batteries and I found that it varies a lot depending on the path, type of surface, weight etc, but what I wanted was an idea of the current and these are the results:
 
 Maximum measured current was 21A, this was riding on the grass.
 
 The typical ride takes 5A to 10A.
 
-The avarage current on a normal ride was 5A.
+The average current on a normal ride was 5A.
 
 
 ![Screenshot 2024-10-20 070919](https://github.com/user-attachments/assets/08e3c8ad-65a4-4ee9-978d-c02e7e053a9a)
 ![Screenshot 2024-10-20 071200](https://github.com/user-attachments/assets/725ae643-56e3-4f92-81d4-a6793f0a1885)
 
 
-Using 2 12V-55W light bulbs adequatly simulate the average load, so the measured capacity in hours using the test module was very close to what the scooter was doing.
+Using 2 12V-55W light bulbs adequately simulate the average load, so the measured capacity in hours using the test module was very close to what the scooter was doing.
 
 
