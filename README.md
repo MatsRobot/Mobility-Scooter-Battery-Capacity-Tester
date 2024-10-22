@@ -4,8 +4,10 @@ This device was used to test the remaining capacity of Lead Acid Battery used by
 The device uses two 12V-55W light bulbs as the load, using 5A current to take the fully charged battery to 50% capacity which is the safe discharge limit at 12.23V. Arduino is used to log the voltages of batteries to an SD card and also switch off the load automatically during the measurements as the voltages relates to the battery voltage without and load and then switch them off once 50% is reached.
 
 
-Safety considerations:
+Safety considerations Must be taken to avoid battery shortage, light bulb shortage or exposure to heat and light from the light bulbs:
+
 1: 3 10A inline Fuses were used to remove the possibility of shorting the battery terminals. 
+
 2: The light bulbs were placed in separate glass housings to avoid shortage, exposure to heat and direct light. Fan was used to cool the housing.
 
 
