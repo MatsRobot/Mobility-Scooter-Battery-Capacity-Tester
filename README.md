@@ -1,7 +1,13 @@
 # Mobility-Scooter-Battery-Capacity-Tester
-This device tests the remaining capacity of Lead Acid Battery used by Mobility Scooters
+This device was used to test the remaining capacity of Lead Acid Battery used by Mobility Scooters
 
-It uses two 12V-55W light bulbs as the load, using 5A current to take the fully charged battery to 50% capacity which is the safe discharge limit at 12.23V. Arduino is used to log the voltages of batteries to an SD card and also switch off the load automatically during the measurements as the voltages relates to the battery voltage without and load and then switch them off once 50% is reached.
+The device uses two 12V-55W light bulbs as the load, using 5A current to take the fully charged battery to 50% capacity which is the safe discharge limit at 12.23V. Arduino is used to log the voltages of batteries to an SD card and also switch off the load automatically during the measurements as the voltages relates to the battery voltage without and load and then switch them off once 50% is reached.
+
+
+Safety considerations:
+1: 3 10A inline Fuses were used to remove the possibility of shorting the battery terminals. 
+2: The light bulbs were placed in separate glass housings to avoid shortage, exposure to heat and direct light. Fan was used to cool the housing.
+
 
 The Tested lead acid batteries were Lucas LSLC22-12 and the new battery typically reaches the 50% capacity using a 5A discharge load in about 5 hours and gets to 0% capacity just over 6 hours.
 
