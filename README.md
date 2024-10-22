@@ -5,8 +5,7 @@ The device uses two 12V-55W light bulbs as the load, using 5A current to take th
 
 
 Safety considerations Must be taken to avoid battery shortage, light bulb shortage or exposure to heat and light from the light bulbs:
-![Screenshot 2024-10-22 075307](https://github.com/user-attachments/assets/58055b6b-8421-4e57-9220-261bd993addf)
-
+![Screenshot 2024-10-22 075307](https://github.com/user-attachments/assets/b7831210-b1fd-4243-91bf-568880472262)
 
 1: 3 10A inline Fuses were used to remove the possibility of shorting the battery terminals. 
 
