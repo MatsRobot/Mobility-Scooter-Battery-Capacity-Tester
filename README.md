@@ -9,7 +9,7 @@ This device was engineered to scientifically test the remaining capacity of Lead
     <td width="60%">
       <h2>🚀 System Logic & Automation</h2>
       <p>The device uses two 12V-55W light bulbs as a load, drawing a constant 5A current. An Arduino logs battery voltages to an SD card at set intervals.</p>
-      <p><b>Resting Voltage Accuracy:</b> The system automatically switches off the load during measurements. This is critical because lead-acid voltage tables (SoC) only relate to the battery in a "resting" state. Once the 12.23V (50%) limit is reached, the load is permanently disconnected to prevent cell damage.</p>
+      <p><b>Smart Voltage Checking:</b> To get a true reading of how much "fuel" is left in the battery, the machine has to pause. It briefly turns off the power-draw every minute to take a "Resting Voltage" measurement. This is much more accurate than measuring while the motor is running, which can make a battery look emptier than it actually is.</p>
     </td>
     <td width="40%">
       <img src="https://github.com/user-attachments/assets/4ad89288-b86b-472c-92be-2ce9b4178050" alt="Main Device Interface" />
@@ -36,7 +36,9 @@ The baseline testing was performed on **AGM MU-1 SLD M FT 12V-35AH/20HR** batter
 Mobility scooters operate at 24V using two 12V batteries in series. To monitor these with a common-earth Arduino circuit:
 * **Battery 1 (B1):** Measured directly from 0V to the 12V center tap.
 * **Battery 2 (B2):** Measured by taking the total series voltage (0V to 24V) and subtracting the B1 value.
-* **Formula:** `Voltage_B2 = Total_Voltage - Voltage_B1`
+* **Formula:** $V_{B2} = V_{total} - V_{B1}$
+
+
 
 ---
 
@@ -87,6 +89,8 @@ Sulfation is the primary enemy of Lead-Acid longevity. When a battery sits below
 
 ## 🛠️ Implementation Details
 This project utilizes the **RFID_Clocking_Machine_V4.4** module as a data-logging backbone. A custom voltage-divider circuit was designed to safely interface the high battery voltages with the Arduino analog pins.
+
+
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/4e2f7d95-faed-4111-bf52-be06c072d546" alt="Wiring and Pin Assignments" />
