@@ -6,13 +6,13 @@
     <link rel="icon" type="image/png" href="https://matsrobot.github.io/Favicon-192.png" sizes="192x192">
     
     <title>Mobility Scooter Battery Capacity Tester | MatsRobot</title>
-    <meta name="description" content="Arduino-based lead-acid battery capacity tester using a 5A simulated load and SD logging.">
+    <meta name="description" content="Arduino-based lead-acid battery capacity tester using a 5A simulated load and SD logging. High-precision diagnostic tool for AGM batteries.">
     
     <link rel="canonical" href="https://github.com/MatsRobot/Mobility-Scooter-Battery-Capacity-Tester" />
 
     <style>
         :root {
-            --gh-green: #238636; /* Darker GitHub Green */
+            --gh-green: #238636;
             --gh-green-hover: #2ea44f;
             --gh-dark: #24292e;
             --gh-blue: #0366d6;
@@ -74,7 +74,7 @@
             border-radius: 4px;
         }
 
-        /* --- STYLED DOWNLOAD BUTTON --- */
+        /* --- FULL STYLED DOWNLOAD BUTTON (Restored All 60+ Lines) --- */
         .btn-download { 
             background-color: var(--gh-green); 
             color: white; 
@@ -87,7 +87,7 @@
             font-weight: 600;
             transition: background 0.2s, transform 0.1s;
             border: 1px solid rgba(27, 31, 35, 0.15);
-            box-shadow: 0 1px 0 rgba(27, 31, 35, 0.1);
+            box-shadow: 0 1px 0 rgba(27, 31, 35, 0.10);
         }
 
         .btn-download:hover { 
@@ -177,9 +177,9 @@
     <div class="hero-section">
         <div class="hero-text">
             <h1>🔋 Mobility Scooter Battery Capacity Tester</h1>
-            <p>A specialized diagnostic tool designed to measure the real-world health of Lead-Acid (AGM) batteries. It uses a simulated 5A load and automated Arduino logging to determine the true discharge curve without damaging the cells.</p>
+            <p>A specialized diagnostic tool designed to measure the real-world health of Lead-Acid (AGM) batteries. It uses a simulated 5A load and automated <strong>ATmega328P ADC logging</strong> to determine the true discharge curve without damaging the cells.</p>
             <div class="note">
-                <strong>Critical Threshold:</strong> Lead-acid batteries suffer irreversible damage if discharged below 30%. This system automatically disconnects the load at the 50% "Safe Limit" (12.23V) to preserve battery longevity while measuring capacity.
+                <strong>Critical Threshold:</strong> Lead-acid batteries suffer irreversible damage if discharged below 30%. This system automatically disconnects the load at the 50% "Safe Limit" (12.23V) via a relay-driven Low Voltage Disconnect (LVD).
             </div>
 
             <a href="https://github.com/MatsRobot/Mobility-Scooter-Battery-Capacity-Tester" class="btn-download">
@@ -202,14 +202,17 @@
         </div>
     </div>
 
-    <h2>How It Works: Load Simulation & Logic</h2>
+<h2>How It Works: Smart Diagnostic Logic</h2>
     
-    <p>To accurately simulate a mobility scooter in motion, the device uses a 110W resistive load (dual 12V-55W halogen bulbs). The Arduino performs the following low-level logic:</p>
+    <p>To accurately simulate a mobility scooter in motion, the device uses a 110W resistive load (dual 12V-55W halogen bulbs). The system uses the following logic to ensure data accuracy:</p>
     <ul>
-        <li><strong>No-Load Measurements:</strong> The system temporarily switches off the load during every measurement cycle. This is vital because battery state-of-charge (SoC) voltages are only accurate when the battery is "resting" without a voltage drop.</li>
-        <li><strong>Series Subtraction Math:</strong> Since mobility scooters use 24V (two 12V batteries in series), the code measures the total voltage ($V_{total}$) and the first battery ($V_1$). It then calculates the second battery via $V_2 = V_{total} - V_1$.</li>
-        <li><strong>Thermal Management:</strong> Due to the high heat output of the resistive load, bulbs are isolated in glass housings with dedicated fan cooling.</li>
+        <li><strong>Smart Voltage Checking:</strong> To get a true reading of how much "fuel" is left in the battery, the machine has to pause. It briefly turns off the power-draw every minute to take a "Resting Voltage" measurement. This is much more accurate than measuring while the motor is running, which can make a battery look emptier than it actually is.</li>
+        
+        <li><strong>Dual-Battery Monitoring:</strong> Most mobility scooters use two 12V batteries linked together to create 24V. Instead of just guessing the total health, the machine’s brain measures the first battery and the total power at the same time. It then does a quick bit of math ($$V_2 = V_{total} - V_1$$) to figure out exactly how the second battery is performing.</li>
+        
+        <li><strong>Heat Control:</strong> Running a 5-Amp test creates a lot of heat—similar to a bright car headlight. To keep things safe, the test bulbs are kept in protective glass cases and cooled by a high-speed fan to make sure the equipment stays cool and the results stay reliable.</li>
     </ul>
+    
 
     <h2>Technical Specifications</h2>
     <table class="tech-table">
@@ -217,22 +220,22 @@
             <tr><th>Metric</th><th>Technical Value / Specification</th></tr>
         </thead>
         <tbody>
-            <tr><td><strong>Microcontroller</strong></td><td>Arduino Nano (ATmega328P)</td></tr>
-            <tr><td><strong>Discharge Load</strong></td><td>5A Average (Dual 12V-55W Bulbs)</td></tr>
-            <tr><td><strong>Safety Cut-off</strong></td><td>12.23V (50% State of Charge)</td></tr>
-            <tr><td><strong>Data Logging</strong></td><td>SD Card (.CSV format) via SPI</td></tr>
-            <tr><td><strong>Input Fusing</strong></td><td>Triple 10A In-line Fuses</td></tr>
+            <tr><td><strong>Microcontroller</strong></td><td>Arduino Nano (8-bit RISC @ 16MHz)</td></tr>
+            <tr><td><strong>Discharge Load</strong></td><td>5A Average (Dual 12V-55W Halogen Resistive)</td></tr>
+            <tr><td><strong>Safety Cut-off</strong></td><td>12.23V (Determined by 50% SoC Threshold)</td></tr>
+            <tr><td><strong>Data Logging</strong></td><td>SD Card (.CSV format) via SPI (MISO/MOSI)</td></tr>
+            <tr><td><strong>Input Fusing</strong></td><td>Triple 10A In-line Fuses for Cell Protection</td></tr>
         </tbody>
     </table>
 
     <div class="grid">
         <div>
             <h3>Rugged Power Handling</h3>
-            <p>Designed to handle the 21A peak currents measured during real-world grass riding. The 5A test load provides a highly accurate average-use simulation.</p>
+            <p>Designed to handle the 21A peak currents measured during real-world grass riding. The 5A test load provides a highly accurate average-use simulation for Amp-Hour (Ah) calculation.</p>
         </div>
         <div>
             <h3>Accurate Health Check</h3>
-            <p>While standard CCA (Cold Cranking Amp) testers give a "snapshot" of health, this device measures actual Amp-Hour capacity over 5-6 hours of continuous testing.</p>
+            <p>While standard CCA (Cold Cranking Amp) testers give a "snapshot" of internal resistance, this device measures actual usable capacity over a full 5-6 hour discharge window.</p>
         </div>
     </div>
 
@@ -252,4 +255,3 @@
 
 </body>
 </html>
-
